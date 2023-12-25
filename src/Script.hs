@@ -3,7 +3,7 @@
 {-# OPTIONS_GHC -fplugin-opt PlutusTx.Plugin:verbosity=2 #-}
 
 module Script
-  ( serialisedArcadeValidator,
+  ( serialisedValidator,
   )
 where
 
@@ -11,25 +11,25 @@ import PlutusLedgerApi.V2 qualified
 import PlutusTx qualified
 import PlutusTx.Prelude qualified
 
-{-# INLINEABLE arcadeUntypedValidator #-}
-arcadeUntypedValidator ::
+{-# INLINEABLE untypedValidator #-}
+untypedValidator ::
   PlutusTx.Prelude.BuiltinData ->
   PlutusTx.Prelude.BuiltinData ->
   PlutusTx.Prelude.BuiltinData ->
   ()
-arcadeUntypedValidator datum redeemer ctx =
+untypedValidator datum redeemer ctx =
   ()
 
-{-# INLINEABLE arcadeValidatorScript #-}
-arcadeValidatorScript ::
+{-# INLINEABLE validatorScript #-}
+validatorScript ::
   PlutusTx.CompiledCode
     ( PlutusTx.Prelude.BuiltinData ->
       PlutusTx.Prelude.BuiltinData ->
       PlutusTx.Prelude.BuiltinData ->
       ()
     )
-arcadeValidatorScript =
-  $$(PlutusTx.compile [||arcadeUntypedValidator||])
+validatorScript =
+  $$(PlutusTx.compile [||untypedValidator||])
 
-serialisedArcadeValidator :: PlutusLedgerApi.V2.SerialisedScript
-serialisedArcadeValidator = PlutusLedgerApi.V2.serialiseCompiledCode arcadeValidatorScript
+serialisedValidator :: PlutusLedgerApi.V2.SerialisedScript
+serialisedValidator = PlutusLedgerApi.V2.serialiseCompiledCode validatorScript

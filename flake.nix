@@ -10,7 +10,7 @@
     flake-utils = {
       url = "github:numtide/flake-utils";
     };
-    horizon-plutus.url = "/home/jonathan/Documents/horizon-plutus";
+    horizon-plutus.url = "git+https://github.com/jonathanfishbein1/horizon-plutus";
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
   };
   outputs =

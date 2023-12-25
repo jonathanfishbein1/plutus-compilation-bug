@@ -203,16 +203,17 @@
         "nixpkgs-libR": "nixpkgs-libR"
       },
       "locked": {
-        "dirtyRev": "fde8d7bfead109816200f42eb660facd1f255de3-dirty",
-        "dirtyShortRev": "fde8d7b-dirty",
-        "lastModified": 1702894989,
+        "lastModified": 1703532194,
         "narHash": "sha256-G6RTLV2UmJ+XlMmvI7h5QzSFKKg9M9Yc5oKpXy/VMFE=",
+        "ref": "refs/heads/main",
+        "rev": "1f850afc79373000da55f44d1e42c419f1225cda",
+        "revCount": 386,
         "type": "git",
-        "url": "file:///home/jonathan/Documents/horizon-plutus"
+        "url": "https://github.com/jonathanfishbein1/horizon-plutus"
       },
       "original": {
         "type": "git",
-        "url": "file:///home/jonathan/Documents/horizon-plutus"
+        "url": "https://github.com/jonathanfishbein1/horizon-plutus"
       }
     },
     "iohk-nix": {
